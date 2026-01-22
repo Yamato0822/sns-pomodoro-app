@@ -1,0 +1,13 @@
+[build]
+  command = "pnpm install --no-frozen-lockfile && rm -rf node_modules/react-native-css-interop/.cache && npx expo export -p web"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  EXPO_NO_METRO_WORKSPACE_ROOT = "1"
+  METRO_NO_CACHE = "1"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
